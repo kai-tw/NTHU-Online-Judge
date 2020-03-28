@@ -6,12 +6,6 @@ void buildMaxHeap(int* arr, size_t size);
 void heapMaxify(int* arr, int root, size_t size);
 void swap(int* a, int* b);
 
-void printHeap(int* arr, size_t size) {
-	for (int i = 1; i <= size; i++) {
-		printf("%d%c", arr[i], i != size ? ' ' : '\n');
-	}
-}
-
 int main() {
 	unsigned int m, * H, operation, key, show = 0;
 	unsigned long long sum = 0;
