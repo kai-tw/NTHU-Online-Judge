@@ -8,8 +8,10 @@ short parenthesesMatching(char*);
 
 int main() {
 	int n;
-	char *T[10000];
+	char **T;
 	scanf("%d", &n); getchar();
+
+	T = (char**)malloc(n * sizeof(char*));
 
 	for (int i = 0; i < n; i++) {
 		T[i] = (char*)malloc(SIZE * sizeof(char));
