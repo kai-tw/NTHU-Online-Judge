@@ -81,7 +81,7 @@ void DFS(List* list, int root, int* distance, int* visited, int* leaf) {
 		int last = 0;
 		current = list[root].begin;
 		while (current != NULL) {
-			BFS(list, current->key, distance, visited, leaf);
+			DFS(list, current->key, distance, visited, leaf);
 			current = current->next;
 		}
 		if (list[root].begin == list[root].last) {
