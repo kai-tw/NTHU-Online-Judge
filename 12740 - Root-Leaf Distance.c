@@ -13,7 +13,7 @@ typedef struct _List {
 } List;
 
 void listInsertLast(List*, int, int);
-void BFS(List*, int, int*, int*, int*);
+void DFS(List*, int, int*, int*, int*);
 
 int main() {
 	int n, root, * distance, * visited, *leaf;
@@ -36,7 +36,7 @@ int main() {
 	visited = (int*)calloc(1, n * sizeof(int));
 	distance = (int*)calloc(1, n * sizeof(int));
 	leaf = (int*)calloc(1, n * sizeof(int));
-	BFS(V, root, distance, visited, leaf);
+	DFS(V, root, distance, visited, leaf);
 
 	int minLen = INT_MAX;
 
@@ -68,7 +68,7 @@ void listInsertLast(List* list, int key, int length) {
 		list->last = data;
 	}
 }
-void BFS(List* list, int root, int* distance, int* visited, int* leaf) {
+void DFS(List* list, int root, int* distance, int* visited, int* leaf) {
 	if (visited[root] == 0) {
 		Node* current = list[root].begin;
 		while (current != NULL) {
